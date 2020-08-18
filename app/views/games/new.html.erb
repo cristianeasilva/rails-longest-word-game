@@ -1,0 +1,15 @@
+<h1>New Game</h1>
+
+<ul id="letters">
+  <%= @letters.each do |letter| %>
+    <li><%= letter %></li>
+  <% end %>
+</ul>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <p><label for="word">What is the longest word you can find?</label></p>
+  <input type="text" name="word">
+  <input type="submit" value="Play">
+</form>
+
